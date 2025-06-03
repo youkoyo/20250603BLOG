@@ -17,10 +17,13 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@types/mockjs": "^1.0.10",
+    "@types/node": "^22.15.29",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
     "@yike-design/ui": "^0.0.21",
     "less": "^4.3.0",
+    "mockjs": "^1.1.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vue-router": "^4.5.1",

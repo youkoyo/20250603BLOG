@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="header-bar">
-      <div class="logo"><img src="../assets/logo_TiAN.png" alt="网站logo" /></div>
+      <div class="logo" @click="handleLogoClick()">
+        <img src="../../assets/logo_TiAN.png" alt="网站logo" />
+      </div>
       <div class="login-info">
         <yk-space align="center" :size="'2em'">
           <!-- 头像 -->
@@ -27,7 +29,15 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+
+// 点击logo跳转到首页
+const router = useRouter();
+const handleLogoClick = () => {
+  router.push("/");
+};
+</script>
 
 <style scoped lang="less">
 .header-bar {
@@ -36,7 +46,7 @@
   left: 0;
   width: 100vw;
   height: 4em;
-  background-color: #fff;
+  background-color: @bg-color-ss;
   box-shadow: 0 2px 4px rgba(0, 21, 41, 0.1);
   display: flex;
   justify-content: space-between;
