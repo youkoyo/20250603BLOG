@@ -41,24 +41,24 @@ export const overLinks = [
         path: '',
         name: '本地文件',
         total: null,
-        bgColor: '180deg,rgba(0, 106, 255, 0.8) 0%,rgb(0, 157, 255) 100%',
+        bgColor: '180deg, #64B5F6 0%, #7986CB 100%', // 中蓝到紫灰
     },
     {
         path: 'editArticle',
         name: '博客文章',
         total: 0,
-        bgColor: '180deg,rgba(255, 99, 47, 0.24) 0%,rgb(255, 240, 33) 100%',
+        bgColor: '180deg, #FF8A65 0%, #FFB74D 100%', // 珊瑚橙到浅橙
     },
     {
         path: 'editGallery',
         name: '摄影图库',
         total: null,
-        bgColor: '180deg,rgba(43, 255, 0, 0.8) 0%,rgb(0, 255, 149) 100%',
+        bgColor: '180deg, #77DD77 0%, #C1E1C1 100%', // 薄荷绿到青绿
     },
     {
         path: 'editDiary',
         name: '随笔随记',
         total: 0,
-        bgColor: '180deg,rgba(255, 0, 170, 0.24) 0%,rgb(155, 0, 103) 100%',
+        bgColor: '180deg, #F8A5C2 0%, #ECCBFF 100%', // 温柔粉紫渐变，白色文字清晰可见
     },
 ]
