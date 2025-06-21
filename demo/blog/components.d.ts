@@ -8,6 +8,9 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Comment: typeof import('./src/components/overview/Comment.vue')['default']
+    Datas: typeof import('./src/components/overview/Datas.vue')['default']
+    DayOrNightTheme: typeof import('./src/components/tool-Component/DayOrNightTheme.vue')['default']
     Gather: typeof import('./src/components/overview/Gather.vue')['default']
     HeaderBar: typeof import('./src/components/bar/HeaderBar.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
@@ -16,9 +19,12 @@ declare module 'vue' {
     MenuBar: typeof import('./src/components/bar/MenuBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TiANRadioGroup: typeof import('./src/components/TiAN-Component/TiAN-Radio-Group.vue')['default']
+    TiANTab: typeof import('./src/components/TiAN-Component/TiAN-Tab.vue')['default']
     YkAvatar: typeof import('@yike-design/ui/es')['YkAvatar']
     YkBadge: typeof import('@yike-design/ui/es')['YkBadge']
     YkButton: typeof import('@yike-design/ui/es')['YkButton']
+    YkCard: typeof import('@yike-design/ui/es')['YkCard']
     YkSpace: typeof import('@yike-design/ui/es')['YkSpace']
     YkText: typeof import('@yike-design/ui/es')['YkText']
     YkTheme: typeof import('@yike-design/ui/es')['YkTheme']

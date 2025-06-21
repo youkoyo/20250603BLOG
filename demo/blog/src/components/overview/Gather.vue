@@ -46,7 +46,11 @@ onMounted(() => {
 .overview-item {
   width: 25%;
   height: 100%;
-  margin: 0 1em;
+  // 第一个div和最后一个div不设置margin
+  &:last-child {
+    margin: 0;
+  }
+  margin: 0 1em 0 0;
   padding: 1em 2em;
   display: flex;
   flex-direction: row;
