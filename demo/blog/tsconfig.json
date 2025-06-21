@@ -1,7 +1,72 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "references": [], // 项目引用配置（空数组表示没有子项目引用）
+  // ================== 编译器选项 ==================
+  "compilerOptions": {
+    // 启用复合编译模式（支持项目引用）
+    "composite": true,
+    /* 
+     * 项目引用优化选项：
+     * true - 禁用项目引用重定向（提高性能）
+     * 适用于大型项目，避免TS解析引用项目的源文件
+     */
+    "disableSourceOfProjectReferenceRedirect": true,
+    /*
+     * 项目引用解析优化：
+     * true - 跳过解决方案查找（加快编译速度）
+     * 适用于明确知道所有引用的项目结构
+     */
+    "disableSolutionSearching": true,
+    /*
+     * 类型检查优化：
+     * true - 跳过库文件的类型检查
+     * 显著减少编译时间，但需确保库类型正确
+     */
+    "skipLibCheck": true,
+    // ============= 声明文件生成配置 =============
+    "declaration": true, // 启用.d.ts声明文件生成
+    "declarationMap": true, // 生成声明源映射（便于调试）
+    "emitDeclarationOnly": false, // false: 同时生成JS和声明文件；true: 只生成声明文件
+    "declarationDir": "./dist/types", // 声明文件输出目录
+    // ================ 路径别名配置 ================
+    "baseUrl": ".", // 基础路径（所有非绝对导入的基准目录）
+    "paths": { // 路径映射（类似Webpack的alias）
+      "@/*": [
+        "src/*"
+      ] // 将"@/"映射到"src/"目录
+    },
+    // =============== 核心编译选项 ================
+    "target": "ESNext", // 编译目标ECMAScript版本
+    "module": "ESNext", // 模块系统类型
+    "moduleResolution": "Node", // 模块解析策略（推荐Node风格）
+    "esModuleInterop": true, // 启用CommonJS/ES模块互操作性
+    // =============== 严格类型检查 ================
+    "strict": true, // 启用所有严格类型检查选项
+    // =============== 其他重要选项 ================
+    "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致性
+    "resolveJsonModule": true, // 允许导入JSON文件
+    "isolatedModules": true, // 确保每个文件可独立编译（解决循环依赖问题）
+    "noEmitOnError": true, // 类型错误时不生成输出文件
+    // ============= 环境类型声明配置 =============
+    "types": [
+      "vite/client", // 包含Vite环境变量和导入的类型
+      "vue" // 包含Vue单文件组件的类型
+    ]
+  },
+  // ================== 包含文件 ==================
+  "include": [
+    "src/**/*.ts", // 所有TypeScript文件
+    "src/**/*.d.ts", // 所有类型声明文件
+    "src/**/*.tsx", // 所有TSX文件（React JSX）
+    "src/**/*.vue", // 所有Vue单文件组件
+    // 明确包含问题文件（解决特定文件生成问题）
+    "src/utils/menu.ts" // 强制包含menu.ts文件
+  ],
+  // ================== 排除文件 ==================
+  "exclude": [
+    "node_modules", // 排除node_modules目录（依赖包）
+    "dist", // 排除构建输出目录
+    "**/*.spec.ts", // 排除测试文件（spec）
+    "**/*.test.ts", // 排除测试文件（test）
+    "**/*.config.js" // 排除JavaScript配置文件
   ]
 }
