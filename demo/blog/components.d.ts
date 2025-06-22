@@ -10,7 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Comment: typeof import('./src/components/overview/Comment.vue')['default']
     Datas: typeof import('./src/components/overview/Datas.vue')['default']
-    DayOrNightTheme: typeof import('./src/components/tool-Component/DayOrNightTheme.vue')['default']
+    DayOrNightTheme: typeof import('./src/components/Tool-Component/DayOrNightTheme.vue')['default']
     Gather: typeof import('./src/components/overview/Gather.vue')['default']
     HeaderBar: typeof import('./src/components/bar/HeaderBar.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']

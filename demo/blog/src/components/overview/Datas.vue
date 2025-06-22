@@ -3,11 +3,19 @@
     <div class="data-card">
       <yk-space justify="between">
         <yk-title :level="4" type="primary">访问量</yk-title>
-        <!-- 多选框组件 -->
-        <TiAN-radio-group v-model="selectedTab" :tabTitles="tabTitles" />
+        <!-- 选框组件 -->
+        <TiAN-radio-group v-model="selectedTab1" :tabTitles="tabTitles1" />
       </yk-space>
     </div>
-    <div class="data-card"></div>
+    <span>{{ selectedTab1 }}</span>
+    <div class="data-card">
+      <yk-space justify="between">
+        <yk-title :level="4" type="primary">数据监测</yk-title>
+        <!-- 选框组件 -->
+        <TiAN-radio-group v-model="selectedTab2" :tabTitles="tabTitles2" />
+      </yk-space>
+    </div>
+    <span>{{ selectedTab2 }}</span>
   </yk-space>
 </template>
 
@@ -15,14 +23,21 @@
 import TiANRadioGroup from "@/components/TiAN-Component/TiAN-Radio-Group.vue";
 import { ref } from "vue";
 
-const tabTitles = [
+const tabTitles1 = [
   { title: "近一年", value: "year", additional: "12121211111111111111111111111111111" },
   { title: "近3个月", value: "months" },
-  { title: "近1个月", value: "month", additional: "请注意啊" },
+  { title: "近1个月", value: "month" },
   { title: "本周", value: "week" },
 ];
 
-const selectedTab = ref("year"); // 默认选中第一个 tab
+const tabTitles2 = [
+  { title: "近一年", value: "year" },
+  { title: "近1个月", value: "month" },
+  { title: "本周", value: "week" },
+];
+
+const selectedTab1 = ref("year"); // 默认选中第一个 tab
+const selectedTab2 = ref("year"); // 默认选中第一个 tab
 </script>
 
 <style scoped lang="less">

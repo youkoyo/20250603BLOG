@@ -12,7 +12,8 @@
       >
         <!-- 隐藏的单选按钮 -->
         <input
-          :id="'radio-' + index"
+          :id="'radio-' + index + '-' + TIMESTAMP"
+          :name="'radio-' + index + '-' + TIMESTAMP"
           type="radio"
           :value="item.value"
           :checked="props.modelValue === item.value"
@@ -20,7 +21,7 @@
         />
         <!-- 单选按钮的标签 -->
         <label
-          :for="'radio-' + index"
+          :for="'radio-' + index + '-' + TIMESTAMP"
           class="radio"
           :class="{ active: props.modelValue === item.value }"
         >
@@ -87,6 +88,11 @@ const props = withDefaults(
     tabWidth: "80px", // 默认宽度
   }
 );
+
+/**
+ * 时间戳常量
+ */
+const TIMESTAMP = new Date().getTime();
 
 /**
  * 定义组件的事件
