@@ -6,6 +6,8 @@
         <!-- 选框组件 -->
         <TiAN-radio-group v-model="selectedTab1" :tabTitles="tabTitles1" />
       </yk-space>
+      <!-- 访问量的图表或数据展示 -->
+      <Line />
     </div>
     <span>{{ selectedTab1 }}</span>
     <div class="data-card">
@@ -21,6 +23,7 @@
 
 <script setup lang="ts">
 import TiANRadioGroup from "@/components/TiAN-Component/TiAN-Radio-Group.vue";
+import Line from "@/components/echarts/line.vue";
 import { ref } from "vue";
 
 const tabTitles1 = [
@@ -46,6 +49,7 @@ const selectedTab2 = ref("year"); // 默认选中第一个 tab
   border-radius: @radius-m;
   background-color: @bg-color-l;
   width: 100%;
+
   ::v-deep .yk-title {
     margin-top: 0.5em;
   }

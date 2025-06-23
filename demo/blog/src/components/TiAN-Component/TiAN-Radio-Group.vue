@@ -171,6 +171,7 @@ const handleChange = (value: string) => {
 /* 组件容器样式 */
 .container {
   position: relative; /* 相对定位，为Tooltip提供定位上下文 */
+  max-width: fit-content;
 }
 
 /* 单选按钮组容器样式 */
