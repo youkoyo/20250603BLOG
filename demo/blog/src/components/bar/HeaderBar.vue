@@ -48,6 +48,7 @@ const handleLogoClick = () => {
   height: 4em;
   background-color: @bg-color-ss;
   box-shadow: 0 2px 4px rgba(0, 21, 41, 0.1);
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   .logo {
