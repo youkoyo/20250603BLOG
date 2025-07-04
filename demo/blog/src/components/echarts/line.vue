@@ -13,7 +13,7 @@ const initChart = () => {
         const chartInstance = echarts.init(chartContainer.value);
         const options = {
             title: {
-                text: 'Line Chart Example',
+                text: '',
             },
             tooltip: {
                 trigger: 'axis',

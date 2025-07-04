@@ -9,15 +9,14 @@
       <!-- 访问量的图表或数据展示 -->
       <Line />
     </div>
-    <span>{{ selectedTab1 }}</span>
     <div class="data-card">
       <yk-space justify="between">
         <yk-title :level="4" type="primary">数据监测</yk-title>
         <!-- 选框组件 -->
         <TiAN-radio-group v-model="selectedTab2" :tabTitles="tabTitles2" />
       </yk-space>
+      <Line />
     </div>
-    <span>{{ selectedTab2 }}</span>
   </yk-space>
 </template>
 
